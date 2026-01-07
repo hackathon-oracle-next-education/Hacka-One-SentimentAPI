@@ -1,0 +1,443 @@
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* Cabeçalho */
+.header {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* Conteúdo principal */
+.content {
+    padding: 40px;
+}
+
+/* Seção de entrada */
+.input-section {
+    margin-bottom: 30px;
+}
+
+.input-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 16px;
+    resize: vertical;
+    min-height: 150px;
+    transition: all 0.3s ease;
+    line-height: 1.5;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.char-count {
+    text-align: right;
+    margin-top: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.char-count.error {
+    color: #ef4444;
+}
+
+/* Botão de análise */
+.btn-analyze {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-analyze:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+}
+
+.btn-analyze:active {
+    transform: translateY(0);
+}
+
+.btn-analyze:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Seção de resultados */
+.result-section {
+    margin-top: 40px;
+    display: none;
+}
+
+.result-section.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.result-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-card {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 30px;
+    border: 2px solid #e5e7eb;
+}
+
+/* Display do sentimento */
+.sentiment-display {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.sentiment-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin-right: 25px;
+}
+
+.sentiment-icon.positive {
+    background: #10b981;
+    color: white;
+}
+
+.sentiment-icon.negative {
+    background: #ef4444;
+    color: white;
+}
+
+.sentiment-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.sentiment-text .sentiment-label {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sentiment-text .positive {
+    color: #10b981;
+}
+
+.sentiment-text .negative {
+    color: #ef4444;
+}
+
+/* Barra de probabilidade */
+.probability-bar {
+    margin-top: 20px;
+}
+
+.probability-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.probability-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.progress-bar {
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.progress-fill.positive {
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.progress-fill.negative {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+/* Mensagens de erro */
+.error-message {
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+    animation: shake 0.5s ease;
+}
+
+/* Loading */
+.loading {
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.loading.show {
+    display: block;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e5e7eb;
+    border-top: 5px solid #4f46e5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+/* Seção de histórico */
+.history-section {
+    margin-top: 40px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 30px;
+}
+
+.history-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.history-item:hover {
+    transform: translateX(5px);
+    border-color: #4f46e5;
+}
+
+.history-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 15px;
+    color: #4b5563;
+}
+
+.history-sentiment {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.history-positive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.history-negative {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Rodapé */
+.footer {
+    background: #f8fafc;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e5e7eb;
+    color: #6b7280;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.api-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.api-status .connected {
+    color: #10b981;
+}
+
+.api-status .disconnected {
+    color: #ef4444;
+}
+
+/* Animações */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .content {
+        padding: 25px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .sentiment-display {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sentiment-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Tooltip para histórico */
+.history-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.history-item::after {
+    content: attr(data-full-text);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background: #1f2937;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: normal;
+    width: 300px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.history-item:hover::after {
+    opacity: 1;
+    visibility: visible;
+}

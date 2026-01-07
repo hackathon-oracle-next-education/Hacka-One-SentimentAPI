@@ -1,0 +1,13 @@
+2026-01-06 13:06:24,281 - __main__ - INFO - ✅ Modelo carregado com sucesso
+2026-01-06 13:06:25,485 - __main__ - INFO - 🚀 Iniciando API...
+2026-01-06 13:17:48,897 - __main__ - INFO - 📝 Analisando texto: 'Estou muito satisfeito com o serviço, tudo funcion...'
+2026-01-06 13:17:49,025 - __main__ - INFO - ✅ Resultado: Positivo (prob: 98.19%)
+2026-01-06 13:17:49,049 - __main__ - INFO - 🌐 POST /predict - Status: 200 - Tempo: 212.78ms
+2026-01-06 13:17:57,724 - __main__ - INFO - 📝 Analisando texto: 'é um lixo!...'
+2026-01-06 13:17:57,726 - __main__ - INFO - ✅ Resultado: Negativo (prob: 67.65%)
+2026-01-06 13:17:57,728 - __main__ - INFO - 🌐 POST /predict - Status: 200 - Tempo: 4.70ms
+2026-01-06 20:40:26,996 - __main__ - INFO - ✅ Modelo carregado com sucesso
+2026-01-06 20:40:29,418 - __main__ - INFO - 🚀 Iniciando API...
+2026-01-06 20:42:26,543 - __main__ - INFO - 📝 Analisando texto: 'horrível...'
+2026-01-06 20:42:26,546 - __main__ - INFO - ✅ Resultado: Negativo (prob: 59.45%)
+2026-01-06 20:42:26,583 - __main__ - INFO - 🌐 POST /predict - Status: 200 - Tempo: 44.87ms

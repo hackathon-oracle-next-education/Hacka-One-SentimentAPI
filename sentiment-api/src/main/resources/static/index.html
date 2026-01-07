@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Sentimento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1><i class="fas fa-chart-line"></i> Análise de Sentimento</h1>
+        <p>Insira um texto e descubra se ele é positivo ou negativo</p>
+    </div>
+
+    <div class="content">
+        <div class="input-section">
+            <h2><i class="fas fa-keyboard"></i> Digite o texto para análise:</h2>
+            <textarea
+                    id="textInput"
+                    placeholder="Digite aqui o texto que deseja analisar (mínimo 5 caracteres)..."
+                    oninput="SentimentUI.updateCharCount()"></textarea>
+            <div id="charCount" class="char-count">0 caracteres</div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Analisando sentimento...</p>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <button id="analyzeBtn" class="btn-analyze" onclick="SentimentUI.analyzeSentiment()">
+            <i class="fas fa-search"></i> Analisar Sentimento
+        </button>
+
+        <div class="result-section" id="resultSection">
+            <h2><i class="fas fa-poll"></i> Resultado da Análise:</h2>
+            <div class="result-card">
+                <div class="sentiment-display">
+                    <div class="sentiment-icon" id="sentimentIcon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="sentiment-text">
+                        <h3>Sentimento: <span id="sentimentLabel" class="sentiment-label"></span></h3>
+                        <p id="confidenceText">Confiança da análise: <span id="confidenceValue">0%</span></p>
+                    </div>
+                </div>
+
+                <div class="probability-bar">
+                    <div class="probability-info">
+                        <span>Probabilidade:</span>
+                        <span id="probabilityValue" class="probability-value">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3><i class="fas fa-history"></i> Histórico de Análises:</h3>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>API de Análise de Sentimento &copy; 2025</p>
+        <p class="api-status">
+            <i class="fas fa-circle" id="apiStatusIcon"></i>
+            <span id="apiStatusText">Verificando conexão...</span>
+        </p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

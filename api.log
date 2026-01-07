@@ -1,0 +1,16 @@
+2026-01-06 20:45:24,137 - __main__ - ERROR - ❌ Erro ao carregar modelo: [Errno 2] No such file or directory: 'sentiment_model_olist.joblib'
+2026-01-06 20:45:25,034 - __main__ - INFO - 🚀 Iniciando API...
+2026-01-06 20:45:51,473 - __main__ - INFO - 📝 Analisando texto: 'MUITO BOM!...'
+2026-01-06 20:45:51,474 - __main__ - ERROR - ❌ Modelo não carregado
+2026-01-06 20:45:51,488 - __main__ - WARNING - ⚠️  HTTP 503 - Serviço temporariamente indisponível. Modelo não carregado.
+2026-01-06 20:45:51,490 - __main__ - INFO - 🌐 POST /predict - Status: 503 - Tempo: 20.45ms
+2026-01-06 20:45:52,455 - __main__ - INFO - 📝 Analisando texto: 'MUITO BOM!...'
+2026-01-06 20:45:52,459 - __main__ - ERROR - ❌ Modelo não carregado
+2026-01-06 20:45:52,460 - __main__ - WARNING - ⚠️  HTTP 503 - Serviço temporariamente indisponível. Modelo não carregado.
+2026-01-06 20:45:52,461 - __main__ - INFO - 🌐 POST /predict - Status: 503 - Tempo: 8.12ms
+2026-01-06 20:47:19,647 - __main__ - INFO - 📝 Analisando texto: 'MUITO BOM!...'
+2026-01-06 20:47:19,647 - __main__ - ERROR - ❌ Modelo não carregado
+2026-01-06 20:47:19,648 - __main__ - WARNING - ⚠️  HTTP 503 - Serviço temporariamente indisponível. Modelo não carregado.
+2026-01-06 20:47:19,648 - __main__ - INFO - 🌐 POST /predict - Status: 503 - Tempo: 3.32ms
+2026-01-06 20:48:06,996 - __main__ - ERROR - ❌ Erro ao carregar modelo: [Errno 2] No such file or directory: 'sentiment_model_olist.joblib'
+2026-01-06 20:48:07,116 - __main__ - INFO - 🚀 Iniciando API...
